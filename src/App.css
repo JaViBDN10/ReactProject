@@ -7,18 +7,44 @@
   pointer-events: none;
 }
 
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
-div#root{
-  background-color: #000000;
+.RTX4080{
+  height: 40vmin;
+  pointer-events: none;
 }
 
-.pages{
-  display: flex;
-  height: 100vw;
+.x870{
+  height: 45vmin;
+  pointer-events: none;
+}
+
+.ryzen9700x{
+  height: 25vmin;
+  pointer-events: none;
+}
+
+.cerdito {
+  height: 25vmin;
+  pointer-events: none;
+}
+
+div#root{
+  background-color: #282c34;
+}
+
+.pages{ 
+  font-size: 20px;
+  line-height: 1.6;
+  width: 70%; 
+  margin: 0 auto;  
+  padding: 20px; 
+}
+.pages img{
+  align-items: end;
+}
+
+.pages h1, h2{
+  color: crimson;
+  font-size: 50px;
 }
 
 .menu{
@@ -71,11 +97,3 @@ div{
   color: #61dafb;
 }
 
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
