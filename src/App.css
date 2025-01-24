@@ -15,6 +15,12 @@
 div#root{
   background-color: #000000;
 }
+
+.pages{
+  display: flex;
+  height: 100vw;
+}
+
 .menu{
   font-size: calc(10px + 2vmin);
   font-weight:lighter;
