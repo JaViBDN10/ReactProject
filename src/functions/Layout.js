@@ -1,5 +1,5 @@
 import '../App.css';
-import logo from '../img/PcGaming.webp';
+import logo from '../img/PcGaming.png';
 
 const Layout = function layout() {
     return (
