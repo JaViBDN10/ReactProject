@@ -7,6 +7,61 @@
   pointer-events: none;
 }
 
+li {
+  margin-bottom: 10px;
+}
+
+.ratonGaming{
+  height: 30vmin;
+  pointer-events: none;
+}
+
+.javier{
+  width: 75%; 
+  border-radius: 15px; 
+  display: block;
+  margin: 50px;
+}
+
+.teclado{
+  height: 35vmin;
+  pointer-events: none;
+}
+
+.highlight{
+  font-weight: bold;
+}
+
+.asusRog32{
+  height: 42vmin;
+  pointer-events: none;
+}
+
+.kingstonFury{
+  height: 30vmin;
+  pointer-events: none;
+}
+
+.Thermaltake1200w{
+  height: 42vmin;
+  pointer-events: none;
+}
+
+.samsung990{
+  height: 35vmin;
+  pointer-events: none;
+}
+
+.corsair6500x{
+  height: 35vmin;
+  pointer-events: none;
+}
+
+.asusRogRyujin{
+  height: 35vmin;
+  pointer-events: none;
+}
+
 .RTX4080{
   height: 40vmin;
   pointer-events: none;
@@ -44,7 +99,7 @@ div#root{
 
 .pages h1, h2{
   color: crimson;
-  font-size: 50px;
+  font-size: 44px;
 }
 
 .menu{
