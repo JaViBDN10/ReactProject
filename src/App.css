@@ -2,6 +2,21 @@
   text-align: center;
 }
 
+button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+ 
+  font-size: 20px;
+}
+button:hover {
+  background-color: #0056b3;
+}
+
 .App-logo {
   height: 25vmin;
   pointer-events: none;
