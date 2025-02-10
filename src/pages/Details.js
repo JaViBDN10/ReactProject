@@ -5,13 +5,14 @@ Modal.setAppElement("#root"); // Necesario para accesibilidad
 
 const Details = () => {
   const [IsOpenGrafica, setIsOpenGrafica] = useState(false);
-  const [IsOpenCPU, setIsOpenCPU] = useState(false);
+  //const [IsOpenCPU, setIsOpenCPU] = useState(false);
+  //<button onClick={() => setIsOpenCPU(true)}>Microprocesador (CPU): AMD Ryzen 7 9800X3D</button>
 
   return (
     <div className="pages">
       <h1 className="h1pages">Detalles de los componentes</h1>
       <button onClick={() => setIsOpenGrafica(true)}>Tarjeta gráfica: Nvidia RTX 4080 Super</button>
-      <button onClick={() => setIsOpenCPU(true)}>Microprocesador (CPU): AMD Ryzen 7 9800X3D</button>
+      
 
       {/* Modal */}
       <Modal
