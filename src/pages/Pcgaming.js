@@ -5,6 +5,7 @@ import javier from '../img/Javier_montando_PC.webp';
 
 const Pcgaming = () => {
   return (
+    <>
     <div className='pages'>
       <h1>Elección del PC Gaming</h1>
     <p>Hemos acabado el ciclo de ASIX, hemos <strong>sufrido</strong> mucho y, por lo tanto, nos merecemos un capricho. Es por ello que hemos decidido romper nuestra  
@@ -20,6 +21,8 @@ const Pcgaming = () => {
     <p>En el siguiente apartado, analizaremos en detalle cada componente y el por qué de su elección, asegurándonos de que nuestro PC Gaming esté preparado para cualquier 
         desafío.</p>
     </div>
+    <div style={{ margin:"20px" , fontSize:"22px"}}><a className="App-link" href="/Components" rel="noopener noreferrer">Ir a Componentes</a></div>
+    </>
   );
 };
 

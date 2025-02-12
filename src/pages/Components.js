@@ -13,6 +13,7 @@ import ratonGaming from '../img/raton-gaming.png';
 
 const Components = () => {
   return (
+    <>
     <div className='pages'>
       <h2>1.- Tarjeta gráfica: Nvidia RTX 4080 Super 16Gb</h2>
       <p>La <strong>RTX 4080 Super</strong> cuenta con 16 GB GDDR6X de VRAM, es la segunda gráfica más potente de la serie actual (4000 series), sólo por debajo de la RTX 4090.</p>
@@ -88,6 +89,8 @@ const Components = () => {
         <p>El <strong>Razer Basilisk V3 Pro 35K</strong> es un ratón gaming RGB ergonómico inalámbrico avanzado y personalizable. Con sensor y rueda de desplazamiento preciso y opciones de configuración detallada.</p>
 
     </div>
+    <div style={{ margin:"20px" , fontSize:"22px"}}><a className="App-link" href="/Details" rel="noopener noreferrer">Ir a Detalles de Componentes</a></div>
+    </>
   );
 };
 
