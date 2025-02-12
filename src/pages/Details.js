@@ -8,9 +8,6 @@ import kingstonFury from '../img/kingston-fury.png';
 import corsair6500x from '../img/corsair-6500x.png';
 import Thermaltake1200w from '../img/thermaltake1200w.png';
 import samsung990 from '../img/samsung-990.png';
-import asusRog32 from '../img/asus-rog-32.png';
-import teclado from '../img/teclado.png';
-import ratonGaming from '../img/raton-gaming.png';
 
 Modal.setAppElement("#root"); // Necesario para accesibilidad
 
