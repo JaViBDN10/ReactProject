@@ -1,3 +1,54 @@
+/* Estilos para el modal */
+.ReactModal__Overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5) !important; /* Fondo oscuro */
+  overflow: hidden !important; /* Evita desplazamiento en el fondo */
+}
+
+/* Evita la barra de desplazamiento */
+.ReactModal__Content {
+  margin: auto; 
+  margin-top: 0px;
+  max-width: 1200px; /* Máximo ancho */
+  height: 700px;
+  animation: fadeIn 0.3s ease-in-out; /* Animación de entrada */
+  overflow: hidden; /* Evita el desplazamiento */
+  background-color: #282c34 !important; /* Fondo oscuro */
+}
+
+/* Botón de cierre mejorado */
+.ReactModal__Content button {
+  background: #ff4d4d; /* Rojo vibrante */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s ease-in-out;
+  margin-top: 30px; /* Espaciado para que no esté pegado al texto */
+}
+
+.ReactModal__Content button:hover {
+  background: #cc0000; /* Rojo más oscuro al pasar el cursor */
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
 .App {
   text-align: center;
 }

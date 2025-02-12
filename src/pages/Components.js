@@ -14,7 +14,7 @@ import ratonGaming from '../img/raton-gaming.png';
 const Components = () => {
   return (
     <div className='pages'>
-      <h2>1.- Tarjeta gráfica: Nvidia RTX 4080 Super</h2>
+      <h2>1.- Tarjeta gráfica: Nvidia RTX 4080 Super 16Gb</h2>
       <p>La <strong>RTX 4080 Super</strong> cuenta con 16 GB GDDR6X de VRAM, es la segunda gráfica más potente de la serie actual (4000 series), sólo por debajo de la RTX 4090.</p>
       <img src={rtx4080} className="RTX4080" alt="RTX 4080" />
       <p>Hemos escogido esta y no la 4090 por el simple hecho de que es la que tengo yo realmente y le tengo cariño 😊. El rendimiento es un 10-15% inferior a la 4090
