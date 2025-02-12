@@ -60,10 +60,10 @@ const Details = () => {
           <span><strong>Memoria:</strong> 16GB GDDR6X</span>
           <span><strong>Núcleos CUDA:</strong> 10240</span>
           <span><strong>Velocidad de reloj:</strong> 2.55 GHz</span>
-          <span><strong>Consumo:</strong> 320W</span><br></br>
-          <div style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
+          <span><strong>Consumo:</strong> 320W</span>
+          <p style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
               <strong>Precio: €799,99</strong>
-          </div>
+          </p>
           <a style={{ color:" #007bff" }} href="https://www.pccomponentes.com/asus-proart-geforce-rtx-4080-super-16gb-oc-edition-gddr6x-dlss3" target="_blank" rel="noopener noreferrer">
               Ver más detalles de la RTX 4080 Super
           </a>
@@ -102,10 +102,10 @@ const Details = () => {
           <span><strong>Número de hilos:</strong> 16</span>
           <span><strong>Frecuencia base:</strong> 3.8 GHz</span>
           <span><strong>Frecuencia turbo:</strong> 5.2 GHz</span>
-          <span><strong>Consumo:</strong> 120W</span><br></br>
-          <div style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
+          <span><strong>Consumo:</strong> 120W</span>
+          <p style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
               <strong>Precio: €799,99</strong>
-          </div>
+          </p>
           <a style={{ color:" #007bff" }} href="https://www.pccomponentes.com/procesador-amd-ryzen-7-9800x3d-47-52ghz" target="_blank" rel="noopener noreferrer">
               Ver más detalles del Ryzen 7 9800X3D
           </a>
@@ -147,10 +147,10 @@ const Details = () => {
             <span><strong>Memoria RAM:</strong> DDR5, hasta 192GB</span>
             <span><strong>PCIe:</strong> PCIe 5.0 para GPU y SSD</span>
             <span><strong>Conectividad:</strong> WiFi 7, Bluetooth 5.3</span>
-            <span><strong>Puertos USB:</strong> USB 4.0, USB-C</span><br></br>
-            <div style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
+            <span><strong>Puertos USB:</strong> USB 4.0, USB-C</span>
+            <p style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
               <strong>Precio: €799,99</strong>
-          </div>
+          </p>
             
             <a style={{ color:" #007bff" }}
               href="https://www.pccomponentes.com/placa-base-asus-rog-strix-x870e-e-gaming-wifi"
@@ -195,10 +195,10 @@ const Details = () => {
           <span><strong>Velocidad:</strong> 5600MHz</span>
           <span><strong>Latencia:</strong> CL40</span>
           <span><strong>Voltaje:</strong> 1.25V</span>
-          <span><strong>Iluminación RGB:</strong> Sí, compatible con software de personalización</span><br></br>
-          <div style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
+          <span><strong>Iluminación RGB:</strong> Sí, compatible con software de personalización</span>
+          <p style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
               <strong>Precio: €799,99</strong>
-          </div>
+          </p>
 
           <a style={{ color:" #007bff" }}
             href="https://www.pccomponentes.com/kingston-fury-beast-rgb-ddr5-5600mhz-128gb-4x32gb-cl40"
@@ -243,10 +243,10 @@ const Details = () => {
           <span><strong>Ventiladores:</strong> 3x 120mm ROG ARGB</span>
           <span><strong>Pantalla LCD:</strong> 3.5” personalizable</span>
           <span><strong>Compatibilidad:</strong> AMD AM5/AM4, Intel LGA1700/1200/115x</span>
-          <span><strong>Iluminación RGB:</strong> Sí, compatible con Aura Sync</span><br></br>
-          <div style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
+          <span><strong>Iluminación RGB:</strong> Sí, compatible con Aura Sync</span>
+          <p style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
               <strong>Precio: €799,99</strong>
-          </div>
+          </p>
 
           <a
             style={{ color:" #007bff" }}
@@ -295,10 +295,10 @@ const Details = () => {
             <span><strong>Iluminación:</strong> RGB integrada</span>
             <span><strong>Puertos frontales:</strong> 2x USB 3.1, 1x USB-C, Audio</span>
             <span><strong>Compatibilidad:</strong> ATX, Micro-ATX, Mini-ITX</span>
-            <span><strong>Gestión del cableado:</strong> Sí, optimizada</span><br></br>
-            <div style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
+            <span><strong>Gestión del cableado:</strong> Sí, optimizada</span>
+            <p style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
               <strong>Precio: €799,99</strong>
-          </div>
+          </p>
 
             <a
               style={{ color:" #007bff" }}
@@ -345,10 +345,10 @@ const Details = () => {
           <span><strong>Ventilador:</strong> Ventilador de 140mm con modo de bajo ruido</span>
           <span><strong>Protección:</strong> OVP, UVP, OCP, SCP, OTP</span>
           <span><strong>Conectores:</strong> 24-pin ATX, 4+4-pin CPU, 6+2 PCI-E, SATA, Molex</span>
-          <span><strong>Garantía:</strong> 10 años</span><br></br>
-          <div style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
+          <span><strong>Garantía:</strong> 10 años</span>
+          <p style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
               <strong>Precio: €799,99</strong>
-          </div>
+          </p>
 
           <a
             style={{ color:" #007bff" }}
@@ -395,10 +395,10 @@ const Details = () => {
           <span><strong>Velocidades de escritura:</strong> Hasta 6,900 MB/s</span>
           <span><strong>Resistencia:</strong> Hasta 2,400 TBW (Terabytes escritos)</span>
           <span><strong>Garantía:</strong> 5 años</span>
-          <span><strong>Controlador:</strong> El controlador Elpis de Samsung</span><br></br>
-          <div style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
+          <span><strong>Controlador:</strong> El controlador Elpis de Samsung</span>
+          <p style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
               <strong>Precio: €799,99</strong>
-          </div>
+          </p>
 
           <a
             style={{ color:" #007bff" }}
