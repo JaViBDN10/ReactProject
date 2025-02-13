@@ -26,28 +26,37 @@ const Assembly = () => {
       <img src={ensamblaje} className='ensamblaje' alt='Preparación del montaje' />
       
       <h2>2.- Instalación del Procesador y la Memoria RAM</h2>
-      <p>Colocamos con cuidado el <strong>Ryzen 7 9800X3D</strong> en el socket AM5 de la placa base y aseguramos los módulos <strong>DDR5</strong>.</p>
+      <p>Primero de todo limpiaremos bien la mesa y colocaremos un mantel antiestático para evitar posibles cargas electroestáticas.
+      Cogeremos la placa base y miraremos que estén los anclajes de AMD para instalar la CPU. Una vez hecha esa comprovación colocaremos
+      el <strong>Ryzen 7 9800X3D</strong> en el socket AM5 de la placa base y aseguramos los módulos <strong>DDR5</strong> en sus respectivos Slots.
+      </p>
       
-      <h2>3.- Montaje de la Placa Base en la Torre</h2>
-      <p>Fijamos la <strong>ASUS ROG STRIX X870E-E</strong> en la <strong>Corsair 6500X RGB</strong> asegurando una correcta alineación con los separadores.</p>
+      <h2>3.- Instalación del Almacenamiento</h2>
+      <p>Ya que nuestro almacenamiento es un M.2 y va conectado a la placa base, aprovecharemos también antes de instalart la placa en la torre
+      a conectar nuestro <strong> Samsung 990 PRO 4TB</strong> en su ranura M.2 y lo aseguramos con su tornillo correspondiente.</p>
       
-      <h2>4.- Instalación de la Refrigeración Líquida</h2>
-      <p>Colocamos el bloque de refrigeración en la CPU y montamos el radiador en la parte superior de la caja.</p>
+      <h2>4.- Montaje de la Placa Base en la Torre</h2>
+      <p>Una vez tenemos los componentes anteriores ya instalados en la placa es hora de fijar nuestra <strong> ASUS ROG STRIX X870E-E</strong> en la 
+      <strong>Corsair 6500X RGB</strong> asegurando una correcta alineación con los separadores.</p>
+      
+      <h2>5.- Instalación de la Refrigeración Líquida</h2>
+      <p>Una vez tenemos la placa correctamente montada en noestro cabinete, aplicamos la pasta térmica en el microprocesador, hay varias maneras de aplicar 
+      la pasta, yo personalmente la distrubuyo en 5 puntos. Colocamos el bloque de refrigeración en la CPU, anclamos los tornillos y montamos el radiador 
+      de 360mm en la parte superior de la caja. En este punto podemos aprovechar para instalar los demás ventiladores en el cabinete y hacer las conexiones a la placa
+      de la líquida.</p>
       <img src={refrigeracion} className='refrigeracion' alt='Instalación de refrigeración líquida' />
       
-      <h2>5.- Instalación de la Tarjeta Gráfica</h2>
+      <h2>6.- Instalación de la Tarjeta Gráfica</h2>
       <p>Insertamos la <strong>RTX 4080 Super</strong> en la ranura PCIe y aseguramos con tornillos para evitar movimientos.</p>
       
-      <h2>6.- Conexión de la Fuente de Alimentación</h2>
+      <h2>7.- Conexión de la Fuente de Alimentación</h2>
       <p>Montamos la <strong>Thermaltake TOUGHPOWER PF3 1200W</strong> y conectamos los cables de alimentación a cada componente.</p>
       
-      <h2>7.- Gestión del Cableado</h2>
+      <h2>8.- Gestión del Cableado</h2>
       <p>Organizamos y ocultamos los cables para mejorar el flujo de aire y la estética interna.</p>
       <img src={cableado} className='cableado' alt='Gestión del cableado' />
       
-      <h2>8.- Instalación del Almacenamiento</h2>
-      <p>Montamos el <strong>Samsung 990 PRO 4TB</strong> en su ranura M.2 y aseguramos con su tornillo correspondiente.</p>
-      
+    
       <h2>9.- Pruebas y Configuración Inicial</h2>
       <p>Encendemos el PC, revisamos la BIOS y configuramos los parámetros necesarios antes de instalar el sistema operativo.</p>
       
