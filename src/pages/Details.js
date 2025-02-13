@@ -62,7 +62,7 @@ const Details = () => {
           <span><strong>Velocidad de reloj:</strong> 2.55 GHz</span>
           <span><strong>Consumo:</strong> 320W</span>
           <p style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
-              <strong>Precio: €799,99</strong>
+              <strong>Precio: 1473,56€</strong>
           </p>
           <a style={{ color:" #007bff" }} href="https://www.pccomponentes.com/asus-proart-geforce-rtx-4080-super-16gb-oc-edition-gddr6x-dlss3" target="_blank" rel="noopener noreferrer">
               Ver más detalles de la RTX 4080 Super
@@ -104,7 +104,7 @@ const Details = () => {
           <span><strong>Frecuencia turbo:</strong> 5.2 GHz</span>
           <span><strong>Consumo:</strong> 120W</span>
           <p style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
-              <strong>Precio: €799,99</strong>
+              <strong>Precio: 569,99€</strong>
           </p>
           <a style={{ color:" #007bff" }} href="https://www.pccomponentes.com/procesador-amd-ryzen-7-9800x3d-47-52ghz" target="_blank" rel="noopener noreferrer">
               Ver más detalles del Ryzen 7 9800X3D
@@ -149,7 +149,7 @@ const Details = () => {
             <span><strong>Conectividad:</strong> WiFi 7, Bluetooth 5.3</span>
             <span><strong>Puertos USB:</strong> USB 4.0, USB-C</span>
             <p style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
-              <strong>Precio: €799,99</strong>
+              <strong>Precio: 634,87€</strong>
           </p>
             
             <a style={{ color:" #007bff" }}
@@ -197,7 +197,7 @@ const Details = () => {
           <span><strong>Voltaje:</strong> 1.25V</span>
           <span><strong>Iluminación RGB:</strong> Sí, compatible con software de personalización</span>
           <p style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
-              <strong>Precio: €799,99</strong>
+              <strong>Precio:478,24€9</strong>
           </p>
 
           <a style={{ color:" #007bff" }}
@@ -245,7 +245,7 @@ const Details = () => {
           <span><strong>Compatibilidad:</strong> AMD AM5/AM4, Intel LGA1700/1200/115x</span>
           <span><strong>Iluminación RGB:</strong> Sí, compatible con Aura Sync</span>
           <p style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
-              <strong>Precio: €799,99</strong>
+              <strong>Precio: 496,00€</strong>
           </p>
 
           <a
@@ -297,7 +297,7 @@ const Details = () => {
             <span><strong>Compatibilidad:</strong> ATX, Micro-ATX, Mini-ITX</span>
             <span><strong>Gestión del cableado:</strong> Sí, optimizada</span>
             <p style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
-              <strong>Precio: €799,99</strong>
+              <strong>Precio: 243,65€</strong>
           </p>
 
             <a
@@ -347,7 +347,7 @@ const Details = () => {
           <span><strong>Conectores:</strong> 24-pin ATX, 4+4-pin CPU, 6+2 PCI-E, SATA, Molex</span>
           <span><strong>Garantía:</strong> 10 años</span>
           <p style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
-              <strong>Precio: €799,99</strong>
+              <strong>Precio: 299,31€</strong>
           </p>
 
           <a
@@ -397,7 +397,7 @@ const Details = () => {
           <span><strong>Garantía:</strong> 5 años</span>
           <span><strong>Controlador:</strong> El controlador Elpis de Samsung</span>
           <p style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
-              <strong>Precio: €799,99</strong>
+              <strong>Precio: 329,95€</strong>
           </p>
 
           <a
@@ -410,7 +410,11 @@ const Details = () => {
           </a>
           <button onClick={() => setIsOpenAlmacenamiento(false)}>Cerrar</button>
         </div>
+
       </Modal>
+    </div>
+    <div class="price-container">
+      <h1>Precio total del montaje incluidos periféricos: 6472,5€</h1>
     </div>
     <div style={{ margin:"20px" , fontSize:"22px"}}><a className="App-link" href="/Assembly" rel="noopener noreferrer">Ir al Montaje</a></div>
     </>
