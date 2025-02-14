@@ -47,10 +47,11 @@ const Assembly = () => {
       <img src={refrigeracion} className='refrigeracion' alt='Instalación de refrigeración líquida' />
       
       <h2>6.- Instalación de la Tarjeta Gráfica</h2>
-      <p>Insertamos la <strong>RTX 4080 Super</strong> en la ranura PCIe y aseguramos con tornillos para evitar movimientos.</p>
+      <p>Tenemos todo practicamente conectado, ahora nos falta lo más importante, insertamos la <strong>RTX 4080 Super</strong> en la ranura PCIe y aseguramos con 
+      tornillos para evitar movimientos.</p>
       
       <h2>7.- Conexión de la Fuente de Alimentación</h2>
-      <p>Montamos la <strong>Thermaltake TOUGHPOWER PF3 1200W</strong> y conectamos los cables de alimentación a cada componente.</p>
+      <p>Ahora nos falta suministrar energía a todos nuestro sistema, montamos la <strong> Thermaltake TOUGHPOWER PF3 1200W</strong> y conectamos los cables de alimentación a cada componente.</p>
       
       <h2>8.- Gestión del Cableado</h2>
       <p>Organizamos y ocultamos los cables para mejorar el flujo de aire y la estética interna.</p>
