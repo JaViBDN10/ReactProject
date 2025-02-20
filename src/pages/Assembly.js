@@ -47,19 +47,25 @@ const Assembly = () => {
       <img src={refrigeracion} className='refrigeracion' alt='Instalación de refrigeración líquida' />
       
       <h2>6.- Instalación de la Tarjeta Gráfica</h2>
-      <p>Tenemos todo practicamente conectado, ahora nos falta lo más importante, insertamos la <strong>RTX 4080 Super</strong> en la ranura PCIe y aseguramos con 
-      tornillos para evitar movimientos.</p>
+      <p>Tenemos todo practicamente conectado, ahora nos falta lo más importante,Insertamos la <strong>RTX 4080 Super</strong> en la ranura PCIe, tiene que hacer el "click",
+       y aseguramos con tornillos para evitar movimientos.</p>
       
       <h2>7.- Conexión de la Fuente de Alimentación</h2>
-      <p>Ahora nos falta suministrar energía a todos nuestro sistema, montamos la <strong> Thermaltake TOUGHPOWER PF3 1200W</strong> y conectamos los cables de alimentación a cada componente.</p>
+      <p>Montamos la <strong>Thermaltake TOUGHPOWER PF3 1200W</strong> y conectamos los cables de alimentación a cada componente. El conector de 24 pines de la placa, 
+      2 conetores mas de 8 pines en la placa, la gráfica necesita 3 de 8 pines y si tuvieramos algún componente más.</p>
       
       <h2>8.- Gestión del Cableado</h2>
-      <p>Organizamos y ocultamos los cables para mejorar el flujo de aire y la estética interna.</p>
+      <p>Nos encargamos de organizar y ocultar los cables de manera eficiente, asegurando un flujo de aire óptimo dentro del gabinete. 
+        Esto no solo mejora la estética interna del equipo, sino que también contribuye a una mejor disipación del calor, 
+        reduciendo la acumulación de polvo y evitando posibles interferencias con otros componentes.</p>
       <img src={cableado} className='cableado' alt='Gestión del cableado' />
       
     
       <h2>9.- Pruebas y Configuración Inicial</h2>
-      <p>Encendemos el PC, revisamos la BIOS y configuramos los parámetros necesarios antes de instalar el sistema operativo.</p>
+      <p>Una vez ensamblado el equipo, realizamos una primera puesta en marcha para verificar que todos los componentes funcionen correctamente. 
+        Accedemos a la BIOS/UEFI para comprobar y ajustar parámetros clave como la velocidad de los ventiladores, 
+        el reconocimiento del almacenamiento y la configuración de la memoria RAM. 
+        Después de estas pruebas iniciales, dejamos el equipo listo para la instalación del sistema operativo.</p>
       
       <div style={{ margin: '20px', fontSize: '22px' }}>
         <a className='App-link' href='/Testing' rel='noopener noreferrer'>Ir a Testeo del PC</a>

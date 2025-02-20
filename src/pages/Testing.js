@@ -14,7 +14,7 @@ const Testing = () => {
         <ul style={{ marginLeft: "100px" }}>
           <li>✔️ Temperaturas correctas de CPU y GPU.</li>
           <li>✔️ La RAM es detectada a su velocidad correcta.</li>
-          <li>✔️ El almacenamiento M.2 o SSD aparece en la lista de dispositivos.</li>
+          <li>✔️ El almacenamiento M.2 aparece en la lista de dispositivos.</li>
           <li>✔️ Configuración de arranque adecuada.</li>
         </ul>
       </p>
