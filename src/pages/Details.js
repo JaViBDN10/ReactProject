@@ -24,40 +24,40 @@ const Details = () => {
   const [IsOpenAlmacenamiento, setIsOpenAlmacenamiento] = useState(false);
   
   const handleDownload = () => {
-  const invoiceData = [
-    ["Producto", "Cantidad", "Precio Unitario", "Subtotal", "IVA (21%)", "Total con IVA"],
-    ["Procesador AMD Ryzen 7", 1, 300, "=B2*C2", "=D2*0.21", "=D2+E2"],
-    ["Tarjeta Gráfica RTX 4070", 1, 600, "=B3*C3", "=D3*0.21", "=D3+E3"],
-    ["Memoria RAM 16GB", 2, 80, "=B4*C4", "=D4*0.21", "=D4+E4"],
-    ["Total", "", "", "=SUM(D2:D4)", "=SUM(E2:E4)", "=SUM(F2:F4)"], 
-  ];
-
-  const ws = XLSX.utils.aoa_to_sheet(invoiceData);
+    const invoiceData = [
+      ["Producto", "Cantidad", "Precio Unitario", "Subtotal", "IVA (21%)", "Total con IVA"],
+      ["Nvidia RTX 4080 Super 16GB", 1, 1200, "=B2*C2", "=D2*0.21", "=D2+E2"],
+      ["AMD Ryzen 7 9800X3D", 1, 500, "=B3*C3", "=D3*0.21", "=D3+E3"],
+      ["ASUS ROG STRIX X870E-E GAMING", 1, 450, "=B4*C4", "=D4*0.21", "=D4+E4"],
+      ["Kingston FURY Beast RGB DDR5 5600MHz", 2, 150, "=B5*C5", "=D5*0.21", "=D5+E5"],
+      ["ASUS ROG Ryujin III 360", 1, 350, "=B6*C6", "=D6*0.21", "=D6+E6"],
+      ["Corsair 6500X RGB Semitorre ATX", 1, 250, "=B7*C7", "=D7*0.21", "=D7+E7"],
+      ["Thermaltake TOUGHPOWER PF3 1200W", 1, 280, "=B8*C8", "=D8*0.21", "=D8+E8"],
+      ["Samsung 990 PRO 4TB SSD", 1, 400, "=B9*C9", "=D9*0.21", "=D9+E9"],
+      ["ASUS ROG Swift OLED PG32UCDP 32\"", 1, 1500, "=B10*C10", "=D10*0.21", "=D10+E10"],
+      ["Razer BlackWidow V4 Pro Gaming", 1, 230, "=B11*C11", "=D11*0.21", "=D11+E11"],
+      ["Razer Basilisk V3 Pro 35K", 1, 160, "=B12*C12", "=D12*0.21", "=D12+E12"],
+      ["Subtotal", "", "", "=SUM(D2:D12)", "", ""],
+      ["IVA (21%)", "", "", "", "=SUM(E2:E12)", ""],
+      ["Total", "", "", "", "", "=D13+E14"]
+    ];
   
-  // Aplicar fórmulas a las celdas
-  ws["D2"].f = "B2*C2";
-  ws["E2"].f = "D2*0.21";
-  ws["F2"].f = "D2+E2";
-
-  ws["D3"].f = "B3*C3";
-  ws["E3"].f = "D3*0.21";
-  ws["F3"].f = "D3+E3";
-
-  ws["D4"].f = "B4*C4";
-  ws["E4"].f = "D4*0.21";
-  ws["F4"].f = "D4+E4";
-
-  ws["D5"].f = "SUM(D2:D4)";
-  ws["E5"].f = "SUM(E2:E4)";
-  ws["F5"].f = "SUM(F2:F4)";
-
-  const wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, "Factura");
-
-  // Generar archivo y descargarlo
-  const excelBuffer = XLSX.write(wb, { bookType: "xlsx", type: "array" });
-  const data = new Blob([excelBuffer], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
-  saveAs(data, "Factura_PC_Gaming.xlsx");
+    const ws = XLSX.utils.aoa_to_sheet(invoiceData);
+  
+    for (let i = 2; i <= 12; i++) {
+      ws[`D${i}`] = { f: `B${i}*C${i}` };
+      ws[`E${i}`] = { f: `D${i}*0.21` };
+      ws[`F${i}`] = { f: `D${i}+E${i}` };
+    }
+  
+    ws["D13"] = { f: "SUM(D2:D12)" };
+    ws["E14"] = { f: "SUM(E2:E12)" };
+    ws["F15"] = { f: "D13+E14" };
+  
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "Factura");
+  
+    XLSX.writeFile(wb, "Factura.xlsx");
   };
   return (
     <>
