@@ -1,3 +1,5 @@
+import * as XLSX from "xlsx";
+import { saveAs } from "file-saver";
 import React, { useState } from "react";
 import Modal from "react-modal";
 import rtx4080 from '../img/4080.png';
@@ -20,10 +22,49 @@ const Details = () => {
   const [IsOpenTorre, setIsOpenTorre] = useState(false);
   const [IsOpenFuente, setIsOpenFuente] = useState(false);
   const [IsOpenAlmacenamiento, setIsOpenAlmacenamiento] = useState(false);
+  
+  const handleDownload = () => {
+  const invoiceData = [
+    ["Producto", "Cantidad", "Precio Unitario", "Subtotal", "IVA (21%)", "Total con IVA"],
+    ["Procesador AMD Ryzen 7", 1, 300, "=B2*C2", "=D2*0.21", "=D2+E2"],
+    ["Tarjeta Gráfica RTX 4070", 1, 600, "=B3*C3", "=D3*0.21", "=D3+E3"],
+    ["Memoria RAM 16GB", 2, 80, "=B4*C4", "=D4*0.21", "=D4+E4"],
+    ["Total", "", "", "=SUM(D2:D4)", "=SUM(E2:E4)", "=SUM(F2:F4)"], 
+  ];
 
+  const ws = XLSX.utils.aoa_to_sheet(invoiceData);
+  
+  // Aplicar fórmulas a las celdas
+  ws["D2"].f = "B2*C2";
+  ws["E2"].f = "D2*0.21";
+  ws["F2"].f = "D2+E2";
+
+  ws["D3"].f = "B3*C3";
+  ws["E3"].f = "D3*0.21";
+  ws["F3"].f = "D3+E3";
+
+  ws["D4"].f = "B4*C4";
+  ws["E4"].f = "D4*0.21";
+  ws["F4"].f = "D4+E4";
+
+  ws["D5"].f = "SUM(D2:D4)";
+  ws["E5"].f = "SUM(E2:E4)";
+  ws["F5"].f = "SUM(F2:F4)";
+
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "Factura");
+
+  // Generar archivo y descargarlo
+  const excelBuffer = XLSX.write(wb, { bookType: "xlsx", type: "array" });
+  const data = new Blob([excelBuffer], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
+  saveAs(data, "Factura_PC_Gaming.xlsx");
+  };
   return (
     <>
     <div className="pages">
+    <button onClick={handleDownload} className="px-4 py-2 bg-blue-500 text-white rounded">
+          Descargar Factura en Excel
+      </button>
       <h1 className="h1pages">Detalles de los componentes</h1>
       <button onClick={() => setIsOpenGrafica(true)}>Tarjeta gráfica: Nvidia RTX 4080 Super 16Gb</button>
       <button onClick={() => setIsOpenCPU(true)}>Microprocesador (CPU): AMD Ryzen 7 9800X3D</button>
@@ -422,4 +463,3 @@ const Details = () => {
 };
 
 export default Details;
-
