@@ -6,6 +6,7 @@ import Assembly from './pages/Assembly';
 import Testing from './pages/Testing';
 import Layout from './functions/Layout';
 import Pcgaming from './pages/Pcgaming';
+import InvoiceDownload from './pages/Invoice';
 
 function App() {
   
@@ -19,6 +20,7 @@ function App() {
         <Route path="/details" element={<Details />} />
         <Route path="/assembly" element={<Assembly />} />
         <Route path="/testing" element={<Testing />} />
+        <Route path="/invoice" element={<InvoiceDownload />} />
       </Routes>
     </Router>
     </>
