@@ -68,6 +68,21 @@
   text-align: center;
 }
 
+.invoiceButton{
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 20px;
+}
+.invoiceButton:hover{
+  background-color: #081e35;
+}
+
+
 button {
   margin-top: 10px;
   padding: 10px;
@@ -76,7 +91,6 @@ button {
   color: white;
   cursor: pointer;
   border-radius: 5px;
- 
   font-size: 20px;
 }
 button:hover {

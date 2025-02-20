@@ -15,7 +15,6 @@ const Layout = function layout() {
             <div><a className="App-link" href="/Details" rel="noopener noreferrer">Detalles Componentes</a></div>
             <div><a className="App-link" href="/Assembly" rel="noopener noreferrer">Montaje</a></div>
             <div><a className="App-link" href="/Testing" rel="noopener noreferrer">Testeo</a></div>
-        <div><a className="App-link" href="/Invoice" rel="noopener noreferrer">Factura</a></div>
           </div>
       </header>
       </div>)

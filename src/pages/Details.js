@@ -25,14 +25,14 @@ const Details = () => {
   const handleDownload = () => {
     const invoiceData = [
       ["Producto", "Cantidad", "Precio Unitario", "Subtotal", "IVA (21%)", "Total con IVA"],
-      ["Nvidia RTX 4080 Super 16GB", 1, 1200, "=B2*C2", "=D2*0.21", "=D2+E2"],
-      ["AMD Ryzen 7 9800X3D", 1, 500, "=B3*C3", "=D3*0.21", "=D3+E3"],
-      ["ASUS ROG STRIX X870E-E GAMING", 1, 450, "=B4*C4", "=D4*0.21", "=D4+E4"],
-      ["Kingston FURY Beast RGB DDR5 5600MHz", 2, 150, "=B5*C5", "=D5*0.21", "=D5+E5"],
-      ["ASUS ROG Ryujin III 360", 1, 350, "=B6*C6", "=D6*0.21", "=D6+E6"],
-      ["Corsair 6500X RGB Semitorre ATX", 1, 250, "=B7*C7", "=D7*0.21", "=D7+E7"],
-      ["Thermaltake TOUGHPOWER PF3 1200W", 1, 280, "=B8*C8", "=D8*0.21", "=D8+E8"],
-      ["Samsung 990 PRO 4TB SSD", 1, 400, "=B9*C9", "=D9*0.21", "=D9+E9"],
+      ["Nvidia RTX 4080 Super 16GB", 1, 1473.56, "=B2*C2", "=D2*0.21", "=D2+E2"],
+      ["AMD Ryzen 7 9800X3D", 1, 569.99, "=B3*C3", "=D3*0.21", "=D3+E3"],
+      ["ASUS ROG STRIX X870E-E GAMING", 1, 634.87, "=B4*C4", "=D4*0.21", "=D4+E4"],
+      ["Kingston FURY Beast RGB DDR5 5600MHz", 4, 119.5, "=B5*C5", "=D5*0.21", "=D5+E5"],
+      ["ASUS ROG Ryujin III 360", 1, 496, "=B6*C6", "=D6*0.21", "=D6+E6"],
+      ["Corsair 6500X RGB Semitorre ATX", 1, 243.65, "=B7*C7", "=D7*0.21", "=D7+E7"],
+      ["Thermaltake TOUGHPOWER PF3 1200W", 1, 299, "=B8*C8", "=D8*0.21", "=D8+E8"],
+      ["Samsung 990 PRO 4TB SSD", 1, 329.95, "=B9*C9", "=D9*0.21", "=D9+E9"],
       ["ASUS ROG Swift OLED PG32UCDP 32\"", 1, 1500, "=B10*C10", "=D10*0.21", "=D10+E10"],
       ["Razer BlackWidow V4 Pro Gaming", 1, 230, "=B11*C11", "=D11*0.21", "=D11+E11"],
       ["Razer Basilisk V3 Pro 35K", 1, 160, "=B12*C12", "=D12*0.21", "=D12+E12"],
@@ -61,12 +61,24 @@ const Details = () => {
   return (
     <>
     <div className="pages">
-    <button onClick={handleDownload}>
-          Descargar Factura en Excel
-      </button>
       <h1 className="h1pages">Detalles de los componentes</h1>
-      <button onClick={() => setIsOpenGrafica(true)}>Tarjeta gráfica: Nvidia RTX 4080 Super 16Gb</button>
-      <button onClick={() => setIsOpenCPU(true)}>Microprocesador (CPU): AMD Ryzen 7 9800X3D</button>
+      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", alignItems: "center" }}>
+        <button onClick={() => setIsOpenGrafica(true)}>
+          Tarjeta gráfica: Nvidia RTX 4080 Super 16Gb
+        </button>
+        <button style={{ backgroundColor:"white", color:"red", width:"40px", fontWeight:"bold"}}>5</button>
+        <button style={{ width:"40px" }}>+</button>
+        <button style={{ width:"40px" }}>-</button>
+      </div>
+      <div className="pages" style={{ margin:"0px", display: "flex", flexDirection: "row", gap: "10px", alignItems: "center" }}>
+        <button onClick={() => setIsOpenCPU(true)}>
+        Microprocesador (CPU): AMD Ryzen 7 9800X3D
+        </button>
+        <button style={{ backgroundColor:"white", color:"red", width:"40px", fontWeight:"bold"}}>5</button>
+        <button style={{ width:"40px" }}>+</button>
+        <button style={{ width:"40px" }}>-</button>
+      </div>
+
       <button onClick={() => setIsOpenPlaca(true)}>Placa Base: ASUS ROG STRIX X870E-E GAMING WIFI</button>
       <button onClick={() => setIsOpenMemoria(true)}>Memorias: Kingston FURY Beast RGB DDR5 5600MHz 128GB (4x32GB) CL40</button>
       <button onClick={() => setIsOpenRefrigeracion(true)}>Refrigeración: ASUS ROG Ryujin III 360 ARGB Extreme Kit de Refrigeración Líquida (360mm)</button>
@@ -453,9 +465,12 @@ const Details = () => {
 
       </Modal>
     </div>
+    
     <div class="price-container">
       <h1>Precio total del montaje incluidos periféricos: 6472,5€</h1>
+      
     </div>
+    <button class="invoiceButton" onClick={handleDownload}>Descargar Factura en Excel</button>
     <div style={{ margin:"20px" , fontSize:"22px"}}><a className="App-link" href="/Assembly" rel="noopener noreferrer">Ir al Montaje</a></div>
     </>
   );
