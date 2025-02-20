@@ -1,5 +1,4 @@
 import * as XLSX from "xlsx";
-import { saveAs } from "file-saver";
 import React, { useState } from "react";
 import Modal from "react-modal";
 import rtx4080 from '../img/4080.png';
@@ -62,7 +61,7 @@ const Details = () => {
   return (
     <>
     <div className="pages">
-    <button onClick={handleDownload} className="px-4 py-2 bg-blue-500 text-white rounded">
+    <button onClick={handleDownload}>
           Descargar Factura en Excel
       </button>
       <h1 className="h1pages">Detalles de los componentes</h1>
