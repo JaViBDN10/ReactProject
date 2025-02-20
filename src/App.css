@@ -184,7 +184,7 @@ li {
 
 .cerdito {
   height: 25vmin;
-  pointer-events: none;
+  cursor: pointer;
 }
 
 div#root{

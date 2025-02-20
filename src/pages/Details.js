@@ -21,12 +21,21 @@ const Details = () => {
   const [IsOpenTorre, setIsOpenTorre] = useState(false);
   const [IsOpenFuente, setIsOpenFuente] = useState(false);
   const [IsOpenAlmacenamiento, setIsOpenAlmacenamiento] = useState(false);
+  const [GraphicUnits, setGraphicUnits]= useState(1);
+  const [CPUUnits, setCPUUnits]= useState(1);
+
+  const handleGraphicUnits = (a) => {
+    setGraphicUnits((prev) => (a === "+" ? prev + 1 : Math.max(1, prev - 1)));
+  };
+  const handleCPUUnits = (a) => {
+    setCPUUnits((prev) => (a === "+" ? prev + 1 : Math.max(1, prev - 1)));
+  };
   
   const handleDownload = () => {
     const invoiceData = [
       ["Producto", "Cantidad", "Precio Unitario", "Subtotal", "IVA (21%)", "Total con IVA"],
-      ["Nvidia RTX 4080 Super 16GB", 1, 1473.56, "=B2*C2", "=D2*0.21", "=D2+E2"],
-      ["AMD Ryzen 7 9800X3D", 1, 569.99, "=B3*C3", "=D3*0.21", "=D3+E3"],
+      ["Nvidia RTX 4080 Super 16GB", GraphicUnits, 1473.56, "=B2*C2", "=D2*0.21", "=D2+E2"],
+      ["AMD Ryzen 7 9800X3D", CPUUnits, 569.99, "=B3*C3", "=D3*0.21", "=D3+E3"],
       ["ASUS ROG STRIX X870E-E GAMING", 1, 634.87, "=B4*C4", "=D4*0.21", "=D4+E4"],
       ["Kingston FURY Beast RGB DDR5 5600MHz", 4, 119.5, "=B5*C5", "=D5*0.21", "=D5+E5"],
       ["ASUS ROG Ryujin III 360", 1, 496, "=B6*C6", "=D6*0.21", "=D6+E6"],
@@ -62,21 +71,21 @@ const Details = () => {
     <>
     <div className="pages">
       <h1 className="h1pages">Detalles de los componentes</h1>
-      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", alignItems: "center" }}>
+      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", justifyContent:"center"}}>
         <button onClick={() => setIsOpenGrafica(true)}>
           Tarjeta gráfica: Nvidia RTX 4080 Super 16Gb
         </button>
-        <button style={{ backgroundColor:"white", color:"red", width:"40px", fontWeight:"bold"}}>5</button>
-        <button style={{ width:"40px" }}>+</button>
-        <button style={{ width:"40px" }}>-</button>
+        <button style={{ backgroundColor:"white", color:"black", width:"40px", fontWeight:"bold"}}>{GraphicUnits}</button>
+        <button onClick={() => handleGraphicUnits("+")} style={{ width:"40px" }}>+</button>
+        <button onClick={() => handleGraphicUnits("-")} style={{ width:"40px" }}>-</button>
       </div>
-      <div className="pages" style={{ margin:"0px", display: "flex", flexDirection: "row", gap: "10px", alignItems: "center" }}>
+      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", justifyContent:"center"}}>
         <button onClick={() => setIsOpenCPU(true)}>
         Microprocesador (CPU): AMD Ryzen 7 9800X3D
         </button>
-        <button style={{ backgroundColor:"white", color:"red", width:"40px", fontWeight:"bold"}}>5</button>
-        <button style={{ width:"40px" }}>+</button>
-        <button style={{ width:"40px" }}>-</button>
+        <button style={{ backgroundColor:"white", color:"black", width:"40px", fontWeight:"bold"}}>{CPUUnits}</button>
+        <button onClick={() => handleCPUUnits("+")} style={{ width:"40px" }}>+</button>
+        <button onClick={() => handleCPUUnits("-")} style={{ width:"40px" }}>-</button>
       </div>
 
       <button onClick={() => setIsOpenPlaca(true)}>Placa Base: ASUS ROG STRIX X870E-E GAMING WIFI</button>
@@ -467,7 +476,7 @@ const Details = () => {
     </div>
     
     <div class="price-container">
-      <h1>Precio total del montaje incluidos periféricos: 6472,5€</h1>
+      <h1>Precio total del montaje incluidos periféricos: 7762,5€</h1>
       
     </div>
     <button class="invoiceButton" onClick={handleDownload}>Descargar Factura en Excel</button>
