@@ -47,9 +47,9 @@ const Details = () => {
   const precioTorre=243.65;
   const precioFuente=299;
   const precioAlmacenamiento=329.95;
-  const precioMonitor=1500;
-  const precioTeclado=230;
-  const precioRaton=160;
+  const precioMonitor=1459;
+  const precioTeclado=269.99;
+  const precioRaton=179.99;
   
   const handleTotal = useCallback(() => {
     setTotal(precioGrafica * GraphicUnits +
@@ -146,93 +146,118 @@ const Details = () => {
     <>
     <div className="pages">
       <h1 className="h1pages">Detalles de los componentes</h1>
-      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", justifyContent:"center"}}>
-        <button onClick={() => setIsOpenGrafica(true)}>
+      <p>Las unidades de los componentes son para un solo equipo, sin embargo, se pueden comprar
+        más unidades de cada componente.
+      </p>
+      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", marginLeft:"15%"}}>
+      <button style={{ backgroundColor:"#16c564", color:"black", width:"120px", fontWeight:"bold"}}>{precioGrafica} €</button>
+        <button style={{width:"700px"}} onClick={() => setIsOpenGrafica(true)}>
           Tarjeta gráfica: Nvidia RTX 4080 Super 16Gb
         </button>
+        <button onClick={() => handleGraphicUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
         <button style={{ backgroundColor:"white", color:"black", width:"40px", fontWeight:"bold"}}>{GraphicUnits}</button>
         <button onClick={() => handleGraphicUnits("+")} style={{ width:"40px", fontWeight:"bold" }}>+</button>
-        <button onClick={() => handleGraphicUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
+        
       </div>
-      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", justifyContent:"center"}}>
-        <button onClick={() => setIsOpenCPU(true)}>
+      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", marginLeft:"15%"}}>
+      <button style={{ backgroundColor:"#16c564", color:"black", width:"120px", fontWeight:"bold"}}>{precioCPU} €</button>
+        <button style={{width:"700px"}} onClick={() => setIsOpenCPU(true)}>
         Microprocesador (CPU): AMD Ryzen 7 9800X3D
         </button>
+        <button onClick={() => handleCPUUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
         <button style={{ backgroundColor:"white", color:"black", width:"40px", fontWeight:"bold"}}>{CPUUnits}</button>
         <button onClick={() => handleCPUUnits("+")} style={{ width:"40px", fontWeight:"bold" }}>+</button>
-        <button onClick={() => handleCPUUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
+        
       </div>
-      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", justifyContent:"center"}}>
-        <button onClick={() => setIsOpenPlaca(true)}>
+      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", marginLeft:"15%"}}>
+      <button style={{ backgroundColor:"#16c564", color:"black", width:"120px", fontWeight:"bold"}}>{precioPlaca} €</button>
+        <button style={{width:"700px"}} onClick={() => setIsOpenPlaca(true)}>
         Placa Base: ASUS ROG STRIX X870E-E GAMING WIFI
         </button>
+        <button onClick={() => handlePlacaUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
         <button style={{ backgroundColor:"white", color:"black", width:"40px", fontWeight:"bold"}}>{PlacaUnits}</button>
         <button onClick={() => handlePlacaUnits("+")} style={{ width:"40px", fontWeight:"bold" }}>+</button>
-        <button onClick={() => handlePlacaUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
+        
       </div>
-      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", justifyContent:"center"}}>
-        <button onClick={() => setIsOpenMemoria(true)}>
+      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", marginLeft:"15%"}}>
+      <button style={{ backgroundColor:"#16c564", color:"black", width:"120px", fontWeight:"bold"}}>{precioMemoria} €</button>
+        <button style={{width:"700px"}} onClick={() => setIsOpenMemoria(true)}>
         Memorias: Kingston FURY Beast RGB DDR5 5600MHz
         </button>
+        <button onClick={() => handleMemoriaUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
         <button style={{ backgroundColor:"white", color:"black", width:"40px", fontWeight:"bold"}}>{MemoriaUnits}</button>
         <button onClick={() => handleMemoriaUnits("+")} style={{ width:"40px", fontWeight:"bold"}}>+</button>
-        <button onClick={() => handleMemoriaUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
+        
       </div>
-      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", justifyContent:"center"}}>
-        <button onClick={() => setIsOpenRefrigeracion(true)}>
+      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", marginLeft:"15%"}}>
+      <button style={{ backgroundColor:"#16c564", color:"black", width:"120px", fontWeight:"bold"}}>{precioRefrigeracion} €</button>
+        <button style={{width:"700px"}} onClick={() => setIsOpenRefrigeracion(true)}>
         Refrigeración: ASUS ROG Ryujin III 360 ARGB Extreme
         </button>
+        <button onClick={() => handleRefrigeracionUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
         <button style={{ backgroundColor:"white", color:"black", width:"40px", fontWeight:"bold"}}>{RefrigeracionUnits}</button>
         <button onClick={() => handleRefrigeracionUnits("+")} style={{ width:"40px", fontWeight:"bold"}}>+</button>
-        <button onClick={() => handleRefrigeracionUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
+        
       </div>
-      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", justifyContent:"center"}}>
-        <button onClick={() => setIsOpenTorre(true)}>
+      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", marginLeft:"15%"}}>
+      <button style={{ backgroundColor:"#16c564", color:"black", width:"120px", fontWeight:"bold"}}>{precioTorre} €</button>
+        <button style={{width:"700px"}} onClick={() => setIsOpenTorre(true)}>
         Caja/Torre: Corsair 6500X RGB Semitorre ATX
         </button>
+        <button onClick={() => handleTorreUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
         <button style={{ backgroundColor:"white", color:"black", width:"40px", fontWeight:"bold"}}>{TorreUnits}</button>
         <button onClick={() => handleTorreUnits("+")} style={{ width:"40px", fontWeight:"bold"}}>+</button>
-        <button onClick={() => handleTorreUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
+        
       </div>
-      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", justifyContent:"center"}}>
-        <button onClick={() => setIsOpenFuente(true)}>
+      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", marginLeft:"15%"}}>
+      <button style={{ backgroundColor:"#16c564", color:"black", width:"120px", fontWeight:"bold"}}>{precioFuente} €</button>
+        <button style={{width:"700px"}} onClick={() => setIsOpenFuente(true)}>
         Fuente de Alimentación: Thermaltake TOUGHPOWER PF3 1200W  
         </button>
+        <button onClick={() => handleFuenteUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
         <button style={{ backgroundColor:"white", color:"black", width:"40px", fontWeight:"bold"}}>{FuenteUnits}</button>
         <button onClick={() => handleFuenteUnits("+")} style={{ width:"40px", fontWeight:"bold"}}>+</button>
-        <button onClick={() => handleFuenteUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
+        
       </div>
-      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", justifyContent:"center"}}>
-        <button onClick={() => setIsOpenAlmacenamiento(true)}>
+      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", marginLeft:"15%"}}>
+      <button style={{ backgroundColor:"#16c564", color:"black", width:"120px", fontWeight:"bold"}}>{precioAlmacenamiento} €</button>
+        <button style={{width:"700px"}} onClick={() => setIsOpenAlmacenamiento(true)}>
         Almacenamiento: Samsung 990 PRO 4TB SSD
         </button>
+        <button onClick={() => handleAlmacenamientoUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
         <button style={{ backgroundColor:"white", color:"black", width:"40px", fontWeight:"bold"}}>{AlmacenamientoUnits}</button>
         <button onClick={() => handleAlmacenamientoUnits("+")} style={{ width:"40px", fontWeight:"bold"}}>+</button>
-        <button onClick={() => handleAlmacenamientoUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
+        
       </div>
-      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", justifyContent:"center"}}>
-        <button onClick={() => setIsOpenMonitor(true)}>
+      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", marginLeft:"15%"}}>
+      <button style={{ backgroundColor:"#16c564", color:"black", width:"120px", fontWeight:"bold"}}>{precioMonitor} €</button>
+        <button style={{width:"700px"}} onClick={() => setIsOpenMonitor(true)}>
         Monitor: ASUS ROG Swift OLED PG32UCDP 32"
         </button>
+        <button onClick={() => handleMonitorUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
         <button style={{ backgroundColor:"white", color:"black", width:"40px", fontWeight:"bold"}}>{MonitorUnits}</button>
         <button onClick={() => handleMonitorUnits("+")} style={{ width:"40px", fontWeight:"bold"}}>+</button>
-        <button onClick={() => handleMonitorUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
+        
       </div>
-      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", justifyContent:"center"}}>
-        <button onClick={() => setIsOpenTeclado(true)}>
+      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", marginLeft:"15%"}}>
+      <button style={{ backgroundColor:"#16c564", color:"black", width:"120px", fontWeight:"bold"}}>{precioTeclado} €</button>
+        <button style={{width:"700px"}} onClick={() => setIsOpenTeclado(true)}>
         Teclado: Razer BlackWidow V4 Pro Gaming RGB
         </button>
+        <button onClick={() => handleTecladoUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
         <button style={{ backgroundColor:"white", color:"black", width:"40px", fontWeight:"bold"}}>{TecladoUnits}</button>
         <button onClick={() => handleTecladoUnits("+")} style={{ width:"40px", fontWeight:"bold"}}>+</button>
-        <button onClick={() => handleTecladoUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
+       
       </div>
-      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", justifyContent:"center"}}>
-        <button onClick={() => setIsOpenRaton(true)}>
+      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", marginLeft:"15%"}}>
+      <button style={{ backgroundColor:"#16c564", color:"black", width:"120px", fontWeight:"bold"}}>{precioRaton} €</button>
+        <button style={{width:"700px"}} onClick={() => setIsOpenRaton(true)}>
         Raton: Razer Basilisk V3 Pro 35K
         </button>
+        <button onClick={() => handleRatonUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
         <button style={{ backgroundColor:"white", color:"black", width:"40px", fontWeight:"bold"}}>{RatonUnits}</button>
         <button onClick={() => handleRatonUnits("+")} style={{ width:"40px", fontWeight:"bold"}}>+</button>
-        <button onClick={() => handleRatonUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
+        
       </div>
 
       {/* Modal para Tarjeta Gráfica */}
@@ -398,7 +423,7 @@ const Details = () => {
           <span><strong>Voltaje:</strong> 1.25V</span>
           <span><strong>Iluminación RGB:</strong> Sí, compatible con software de personalización</span>
           <p style={{ fontSize: "1.5em", color:" #ff4d4d", fontWeight: "bold", margintop: "10px"}}>
-              <strong>Precio:478,24€9</strong>
+              <strong>Precio:478,24€</strong>
           </p>
 
           <a style={{ color:" #007bff" }}
@@ -665,7 +690,7 @@ const Details = () => {
               marginTop: "10px",
             }}
           >
-            <strong>Precio: 1500€</strong>
+            <strong>Precio: 1459€</strong>
           </p>
 
           <a
@@ -728,7 +753,7 @@ const Details = () => {
               marginTop: "10px",
             }}
           >
-            <strong>Precio: 200€</strong>
+            <strong>Precio: 269.99€</strong>
           </p>
 
           <a
@@ -791,12 +816,12 @@ const Details = () => {
               marginTop: "10px",
             }}
           >
-            <strong>Precio: 130€</strong>
+            <strong>Precio: 179.99€</strong>
           </p>
 
           <a
             style={{ color: "#007bff" }}
-            href="https://www.pccomponentes.com/search/?query=Razer%20Basilisk%20V3%20Pro%2035K&&page=1&or-relevance"
+            href="https://www.pccomponentes.com/razer-basilisk-v3-pro-35k-raton-gaming-optico-inalambrico-rgb-35000-dpi-negro"
             target="_blank"
             rel="noopener noreferrer"
           >
