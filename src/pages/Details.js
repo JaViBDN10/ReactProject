@@ -67,6 +67,7 @@ const Details = () => {
   };
   useEffect(() => {
     handleTotal();
+        console.log(Total);
   }, [GraphicUnits,CPUUnits,PlacaUnits,MemoriaUnits,RefrigeracionUnits,TorreUnits,FuenteUnits,AlmacenamientoUnits,MonitorUnits,TecladoUnits,RatonUnits]); 
 
 
@@ -809,7 +810,7 @@ const Details = () => {
     </div>
     
     <div class="price-container">
-      <h1>Precio total del montaje: {Total.toFixed(2)} €</h1>
+      <h1>Precio total del montaje sin IVA: {Total.toFixed(2)} €</h1>
       
     </div>
     <button class="invoiceButton" onClick={handleDownload}>Descargar Factura en Excel</button>
