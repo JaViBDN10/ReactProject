@@ -1,5 +1,5 @@
 import * as XLSX from "xlsx";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import rtx4080 from '../img/4080.png';
 import ryzen9700x from '../img/9700x.png';
@@ -9,6 +9,9 @@ import kingstonFury from '../img/kingston-fury.png';
 import corsair6500x from '../img/corsair-6500x.png';
 import Thermaltake1200w from '../img/thermaltake1200w.png';
 import samsung990 from '../img/samsung-990.png';
+import asusRog32 from '../img/asus-rog-32.png';
+import teclado from '../img/teclado.png';
+import ratonGaming from '../img/raton-gaming.png';
 
 Modal.setAppElement("#root"); // Necesario para accesibilidad
 
@@ -21,8 +24,51 @@ const Details = () => {
   const [IsOpenTorre, setIsOpenTorre] = useState(false);
   const [IsOpenFuente, setIsOpenFuente] = useState(false);
   const [IsOpenAlmacenamiento, setIsOpenAlmacenamiento] = useState(false);
+  const [IsOpenMonitor, setIsOpenMonitor] = useState(false);
+  const [IsOpenTeclado, setIsOpenTeclado] = useState(false);
+  const [IsOpenRaton, setIsOpenRaton] = useState(false);
   const [GraphicUnits, setGraphicUnits]= useState(1);
   const [CPUUnits, setCPUUnits]= useState(1);
+  const [PlacaUnits, setPlacaUnits]= useState(1);
+  const [MemoriaUnits, setMemoriaUnits]= useState(4);
+  const [RefrigeracionUnits, setRefrigeracionUnits]= useState(1);
+  const [TorreUnits, setTorreUnits]= useState(1);
+  const [FuenteUnits, setFuenteUnits]= useState(1);
+  const [AlmacenamientoUnits, setAlmacenamientoUnits]= useState(1);
+  const [MonitorUnits, setMonitorUnits]= useState(1);
+  const [TecladoUnits, setTecladoUnits]= useState(1);
+  const [RatonUnits, setRatonUnits]= useState(1);
+  const [Total, setTotal]= useState(0);
+  const precioGrafica=1473.56;
+  const precioCPU=569.99;
+  const precioPlaca=634.87;
+  const precioMemoria=119.5;
+  const precioRefrigeracion=496;
+  const precioTorre=243.65;
+  const precioFuente=299;
+  const precioAlmacenamiento=329.95;
+  const precioMonitor=1500;
+  const precioTeclado=230;
+  const precioRaton=160;
+  
+  const handleTotal = () => {
+    setTotal(precioGrafica * GraphicUnits+
+      precioCPU*CPUUnits+
+      precioPlaca*PlacaUnits+
+      precioMemoria*MemoriaUnits+
+      precioRefrigeracion*RefrigeracionUnits+
+      precioTorre*TorreUnits+
+      precioFuente*FuenteUnits+
+      precioAlmacenamiento*AlmacenamientoUnits+
+      precioMonitor*MonitorUnits+
+      precioTeclado*TecladoUnits+
+      precioRaton*RatonUnits
+    );
+  };
+  useEffect(() => {
+    handleTotal();
+  }, [GraphicUnits,CPUUnits,PlacaUnits,MemoriaUnits,RefrigeracionUnits,TorreUnits,FuenteUnits,AlmacenamientoUnits,MonitorUnits,TecladoUnits,RatonUnits]); 
+
 
   const handleGraphicUnits = (a) => {
     setGraphicUnits((prev) => (a === "+" ? prev + 1 : Math.max(1, prev - 1)));
@@ -30,21 +76,48 @@ const Details = () => {
   const handleCPUUnits = (a) => {
     setCPUUnits((prev) => (a === "+" ? prev + 1 : Math.max(1, prev - 1)));
   };
+  const handlePlacaUnits = (a) => {
+    setPlacaUnits((prev) => (a === "+" ? prev + 1 : Math.max(1, prev - 1)));
+  };
+  const handleMemoriaUnits = (a) => {
+    setMemoriaUnits((prev) => (a === "+" ? prev + 1 : Math.max(1, prev - 1)));
+  };
+  const handleRefrigeracionUnits = (a) => {
+    setRefrigeracionUnits((prev) => (a === "+" ? prev + 1 : Math.max(1, prev - 1)));
+  };
+  const handleTorreUnits = (a) => {
+    setTorreUnits((prev) => (a === "+" ? prev + 1 : Math.max(1, prev - 1)));
+  };
+  const handleFuenteUnits = (a) => {
+    setFuenteUnits((prev) => (a === "+" ? prev + 1 : Math.max(1, prev - 1)));
+  };
+  const handleAlmacenamientoUnits = (a) => {
+    setAlmacenamientoUnits((prev) => (a === "+" ? prev + 1 : Math.max(1, prev - 1)));
+  };
+  const handleMonitorUnits = (a) => {
+    setMonitorUnits((prev) => (a === "+" ? prev + 1 : Math.max(1, prev - 1)));
+  };
+  const handleTecladoUnits = (a) => {
+    setTecladoUnits((prev) => (a === "+" ? prev + 1 : Math.max(1, prev - 1)));
+  };
+  const handleRatonUnits = (a) => {
+    setRatonUnits((prev) => (a === "+" ? prev + 1 : Math.max(1, prev - 1)));
+  };
   
   const handleDownload = () => {
     const invoiceData = [
       ["Producto", "Cantidad", "Precio Unitario", "Subtotal", "IVA (21%)", "Total con IVA"],
       ["Nvidia RTX 4080 Super 16GB", GraphicUnits, 1473.56, "=B2*C2", "=D2*0.21", "=D2+E2"],
       ["AMD Ryzen 7 9800X3D", CPUUnits, 569.99, "=B3*C3", "=D3*0.21", "=D3+E3"],
-      ["ASUS ROG STRIX X870E-E GAMING", 1, 634.87, "=B4*C4", "=D4*0.21", "=D4+E4"],
-      ["Kingston FURY Beast RGB DDR5 5600MHz", 4, 119.5, "=B5*C5", "=D5*0.21", "=D5+E5"],
-      ["ASUS ROG Ryujin III 360", 1, 496, "=B6*C6", "=D6*0.21", "=D6+E6"],
-      ["Corsair 6500X RGB Semitorre ATX", 1, 243.65, "=B7*C7", "=D7*0.21", "=D7+E7"],
-      ["Thermaltake TOUGHPOWER PF3 1200W", 1, 299, "=B8*C8", "=D8*0.21", "=D8+E8"],
-      ["Samsung 990 PRO 4TB SSD", 1, 329.95, "=B9*C9", "=D9*0.21", "=D9+E9"],
-      ["ASUS ROG Swift OLED PG32UCDP 32\"", 1, 1500, "=B10*C10", "=D10*0.21", "=D10+E10"],
-      ["Razer BlackWidow V4 Pro Gaming", 1, 230, "=B11*C11", "=D11*0.21", "=D11+E11"],
-      ["Razer Basilisk V3 Pro 35K", 1, 160, "=B12*C12", "=D12*0.21", "=D12+E12"],
+      ["ASUS ROG STRIX X870E-E GAMING", PlacaUnits, 634.87, "=B4*C4", "=D4*0.21", "=D4+E4"],
+      ["Kingston FURY Beast RGB DDR5 5600MHz", MemoriaUnits, 119, "=B5*C5", "=D5*0.21", "=D5+E5"],
+      ["ASUS ROG Ryujin III 360", RefrigeracionUnits, 496, "=B6*C6", "=D6*0.21", "=D6+E6"],
+      ["Corsair 6500X RGB Semitorre ATX", TorreUnits, 243.65, "=B7*C7", "=D7*0.21", "=D7+E7"],
+      ["Thermaltake TOUGHPOWER PF3 1200W", FuenteUnits, 299, "=B8*C8", "=D8*0.21", "=D8+E8"],
+      ["Samsung 990 PRO 4TB SSD", AlmacenamientoUnits, 329.95, "=B9*C9", "=D9*0.21", "=D9+E9"],
+      ["ASUS ROG Swift OLED PG32UCDP 32\"", MonitorUnits, 1500, "=B10*C10", "=D10*0.21", "=D10+E10"],
+      ["Razer BlackWidow V4 Pro Gaming", TecladoUnits, 230, "=B11*C11", "=D11*0.21", "=D11+E11"],
+      ["Razer Basilisk V3 Pro 35K", RatonUnits, 160, "=B12*C12", "=D12*0.21", "=D12+E12"],
       ["Subtotal", "", "", "=SUM(D2:D12)", "", ""],
       ["IVA (21%)", "", "", "", "=SUM(E2:E12)", ""],
       ["Total", "", "", "", "", "=D13+E14"]
@@ -76,24 +149,89 @@ const Details = () => {
           Tarjeta gráfica: Nvidia RTX 4080 Super 16Gb
         </button>
         <button style={{ backgroundColor:"white", color:"black", width:"40px", fontWeight:"bold"}}>{GraphicUnits}</button>
-        <button onClick={() => handleGraphicUnits("+")} style={{ width:"40px" }}>+</button>
-        <button onClick={() => handleGraphicUnits("-")} style={{ width:"40px" }}>-</button>
+        <button onClick={() => handleGraphicUnits("+")} style={{ width:"40px", fontWeight:"bold" }}>+</button>
+        <button onClick={() => handleGraphicUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
       </div>
       <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", justifyContent:"center"}}>
         <button onClick={() => setIsOpenCPU(true)}>
         Microprocesador (CPU): AMD Ryzen 7 9800X3D
         </button>
         <button style={{ backgroundColor:"white", color:"black", width:"40px", fontWeight:"bold"}}>{CPUUnits}</button>
-        <button onClick={() => handleCPUUnits("+")} style={{ width:"40px" }}>+</button>
-        <button onClick={() => handleCPUUnits("-")} style={{ width:"40px" }}>-</button>
+        <button onClick={() => handleCPUUnits("+")} style={{ width:"40px", fontWeight:"bold" }}>+</button>
+        <button onClick={() => handleCPUUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
       </div>
-
-      <button onClick={() => setIsOpenPlaca(true)}>Placa Base: ASUS ROG STRIX X870E-E GAMING WIFI</button>
-      <button onClick={() => setIsOpenMemoria(true)}>Memorias: Kingston FURY Beast RGB DDR5 5600MHz 128GB (4x32GB) CL40</button>
-      <button onClick={() => setIsOpenRefrigeracion(true)}>Refrigeración: ASUS ROG Ryujin III 360 ARGB Extreme Kit de Refrigeración Líquida (360mm)</button>
-      <button onClick={() => setIsOpenTorre(true)}>Caja/Torre: Corsair 6500X RGB Semitorre ATX Doble Cristal Templado USB-C Blanca</button>
-      <button onClick={() => setIsOpenFuente(true)}>Fuente de Alimentación: Thermaltake TOUGHPOWER PF3 1200W 80 Plus Platinum Full Modular</button>
-      <button onClick={() => setIsOpenAlmacenamiento(true)}>Almacenamiento: Samsung 990 PRO 4TB SSD PCIe 4.0 NVMe M.2</button>
+      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", justifyContent:"center"}}>
+        <button onClick={() => setIsOpenPlaca(true)}>
+        Placa Base: ASUS ROG STRIX X870E-E GAMING WIFI
+        </button>
+        <button style={{ backgroundColor:"white", color:"black", width:"40px", fontWeight:"bold"}}>{PlacaUnits}</button>
+        <button onClick={() => handlePlacaUnits("+")} style={{ width:"40px", fontWeight:"bold" }}>+</button>
+        <button onClick={() => handlePlacaUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
+      </div>
+      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", justifyContent:"center"}}>
+        <button onClick={() => setIsOpenMemoria(true)}>
+        Memorias: Kingston FURY Beast RGB DDR5 5600MHz
+        </button>
+        <button style={{ backgroundColor:"white", color:"black", width:"40px", fontWeight:"bold"}}>{MemoriaUnits}</button>
+        <button onClick={() => handleMemoriaUnits("+")} style={{ width:"40px", fontWeight:"bold"}}>+</button>
+        <button onClick={() => handleMemoriaUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
+      </div>
+      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", justifyContent:"center"}}>
+        <button onClick={() => setIsOpenRefrigeracion(true)}>
+        Refrigeración: ASUS ROG Ryujin III 360 ARGB Extreme
+        </button>
+        <button style={{ backgroundColor:"white", color:"black", width:"40px", fontWeight:"bold"}}>{RefrigeracionUnits}</button>
+        <button onClick={() => handleRefrigeracionUnits("+")} style={{ width:"40px", fontWeight:"bold"}}>+</button>
+        <button onClick={() => handleRefrigeracionUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
+      </div>
+      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", justifyContent:"center"}}>
+        <button onClick={() => setIsOpenTorre(true)}>
+        Caja/Torre: Corsair 6500X RGB Semitorre ATX
+        </button>
+        <button style={{ backgroundColor:"white", color:"black", width:"40px", fontWeight:"bold"}}>{TorreUnits}</button>
+        <button onClick={() => handleTorreUnits("+")} style={{ width:"40px", fontWeight:"bold"}}>+</button>
+        <button onClick={() => handleTorreUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
+      </div>
+      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", justifyContent:"center"}}>
+        <button onClick={() => setIsOpenFuente(true)}>
+        Fuente de Alimentación: Thermaltake TOUGHPOWER PF3 1200W  
+        </button>
+        <button style={{ backgroundColor:"white", color:"black", width:"40px", fontWeight:"bold"}}>{FuenteUnits}</button>
+        <button onClick={() => handleFuenteUnits("+")} style={{ width:"40px", fontWeight:"bold"}}>+</button>
+        <button onClick={() => handleFuenteUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
+      </div>
+      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", justifyContent:"center"}}>
+        <button onClick={() => setIsOpenAlmacenamiento(true)}>
+        Almacenamiento: Samsung 990 PRO 4TB SSD
+        </button>
+        <button style={{ backgroundColor:"white", color:"black", width:"40px", fontWeight:"bold"}}>{AlmacenamientoUnits}</button>
+        <button onClick={() => handleAlmacenamientoUnits("+")} style={{ width:"40px", fontWeight:"bold"}}>+</button>
+        <button onClick={() => handleAlmacenamientoUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
+      </div>
+      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", justifyContent:"center"}}>
+        <button onClick={() => setIsOpenMonitor(true)}>
+        Monitor: ASUS ROG Swift OLED PG32UCDP 32"
+        </button>
+        <button style={{ backgroundColor:"white", color:"black", width:"40px", fontWeight:"bold"}}>{MonitorUnits}</button>
+        <button onClick={() => handleMonitorUnits("+")} style={{ width:"40px", fontWeight:"bold"}}>+</button>
+        <button onClick={() => handleMonitorUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
+      </div>
+      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", justifyContent:"center"}}>
+        <button onClick={() => setIsOpenTeclado(true)}>
+        Teclado: Razer BlackWidow V4 Pro Gaming RGB
+        </button>
+        <button style={{ backgroundColor:"white", color:"black", width:"40px", fontWeight:"bold"}}>{TecladoUnits}</button>
+        <button onClick={() => handleTecladoUnits("+")} style={{ width:"40px", fontWeight:"bold"}}>+</button>
+        <button onClick={() => handleTecladoUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
+      </div>
+      <div className="pages" style={{ display: "flex", flexDirection: "row", gap: "10px", justifyContent:"center"}}>
+        <button onClick={() => setIsOpenRaton(true)}>
+        Raton: Razer Basilisk V3 Pro 35K
+        </button>
+        <button style={{ backgroundColor:"white", color:"black", width:"40px", fontWeight:"bold"}}>{RatonUnits}</button>
+        <button onClick={() => handleRatonUnits("+")} style={{ width:"40px", fontWeight:"bold"}}>+</button>
+        <button onClick={() => handleRatonUnits("-")} style={{ width:"40px", fontWeight:"bold" }}>-</button>
+      </div>
 
       {/* Modal para Tarjeta Gráfica */}
       <Modal
@@ -473,10 +611,205 @@ const Details = () => {
         </div>
 
       </Modal>
+
+      {/* Modal para el monitor */}
+      <Modal
+        isOpen={IsOpenMonitor}
+        onRequestClose={() => setIsOpenMonitor(false)}
+        contentLabel="Detalles del Monitor"
+      >
+        <div className="pages">
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "20% 80%",
+              alignItems: "center",
+              justifyItems: "center",
+              width: "100%",
+              height: "100%",
+              gap: "20px",
+            }}
+          >
+            <img
+              style={{ width: "200px", height: "200px" }}
+              src={asusRog32} 
+              className="asusMonitor"
+              alt="ASUS ROG Swift OLED PG32UCDP 32"
+            />
+            <h1>ASUS ROG Swift OLED PG32UCDP 32" WOLED UltraHD 4K 240Hz</h1>
+          </div>
+
+          <p>
+            El <strong>ASUS ROG Swift OLED PG32UCDP</strong> es un monitor gaming de alta gama con 
+            un impresionante panel <strong>WOLED UltraHD 4K</strong>, frecuencia de actualización de <strong>240Hz</strong> 
+            y compatibilidad con <strong>G-Sync</strong>, diseñado para ofrecer imágenes fluidas y nítidas.
+            Con su conectividad avanzada, incluyendo <strong>USB-C</strong>, es perfecto tanto para gaming como para uso profesional.
+          </p>
+
+          <span><strong>Tamaño:</strong> 32 pulgadas</span>
+          <span><strong>Resolución:</strong> UltraHD 4K (3840 x 2160)</span>
+          <span><strong>Tipo de panel:</strong> WOLED</span>
+          <span><strong>Tasa de refresco:</strong> 240Hz</span>
+          <span><strong>Compatibilidad:</strong> G-Sync Compatible</span>
+          <span><strong>Brillo:</strong> 1000 nits (HDR)</span>
+          <span><strong>Conectividad:</strong> HDMI 2.1, DisplayPort 1.4, USB-C</span>
+          <span><strong>Tiempo de respuesta:</strong> 0.03 ms</span>
+
+          <p
+            style={{
+              fontSize: "1.5em",
+              color: "#ff4d4d",
+              fontWeight: "bold",
+              marginTop: "10px",
+            }}
+          >
+            <strong>Precio: 1500€</strong>
+          </p>
+
+          <a
+            style={{ color: "#007bff" }}
+            href="https://www.pccomponentes.com/monitor-asus-rog-swift-oled-pg32ucdp-32-woled-ultrahd-4k-240hz-g-sync-compatible-usb-c"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver más detalles del ASUS ROG Swift OLED PG32UCDP
+          </a>
+
+          <button onClick={() => setIsOpenMonitor(false)}>Cerrar</button>
+        </div>
+      </Modal>
+
+      {/* Modal para el Teclado */}
+      <Modal
+        isOpen={IsOpenTeclado}
+        onRequestClose={() => setIsOpenTeclado(false)}
+        contentLabel="Detalles del Teclado"
+      >
+        <div className="pages">
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "20% 80%",
+              alignItems: "center",
+              justifyItems: "center",
+              width: "100%",
+              height: "100%",
+              gap: "20px",
+            }}
+          >
+            <img
+              style={{ width: "200px", height: "200px" }}
+              src={teclado}  // Asegúrate de tener la imagen correspondiente
+              className="razerTeclado"
+              alt="Razer BlackWidow V4 Pro Gaming RGB"
+            />
+            <h1>Razer BlackWidow V4 Pro Gaming RGB</h1>
+          </div>
+
+          <p>
+            El <strong>Razer BlackWidow V4 Pro</strong> es un teclado mecánico de alto rendimiento diseñado para gamers, con teclas mecánicas Razer Green para una respuesta táctil y sonora. Además, ofrece una iluminación RGB personalizable con el sistema Razer Chroma, garantizando una experiencia visual única. Con un diseño robusto y materiales de alta calidad, es ideal para sesiones largas de juego o trabajo.
+          </p>
+
+          <span><strong>Tipo de interruptores:</strong> Razer Green (mecánico, táctil)</span>
+          <span><strong>Iluminación:</strong> Razer Chroma RGB</span>
+          <span><strong>Conectividad:</strong> USB 2.0</span>
+          <span><strong>Teclas adicionales:</strong> Teclas multimedia y controles dedicados</span>
+          <span><strong>Reposamuñecas:</strong> Ergonómico y extraíble</span>
+          <span><strong>Dimensiones:</strong> 455 mm x 187 mm x 40 mm</span>
+          <span><strong>Peso:</strong> 1.5 kg</span>
+
+          <p
+            style={{
+              fontSize: "1.5em",
+              color: "#ff4d4d",
+              fontWeight: "bold",
+              marginTop: "10px",
+            }}
+          >
+            <strong>Precio: 200€</strong>
+          </p>
+
+          <a
+            style={{ color: "#007bff" }}
+            href="https://www.pccomponentes.com/razer-blackwidow-v4-pro-teclado-gaming-rgb-green-switch-layout-us"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver más detalles del Razer BlackWidow V4 Pro
+          </a>
+
+          <button onClick={() => setIsOpenTeclado(false)}>Cerrar</button>
+        </div>
+      </Modal>
+
+      {/* Modal para el Ratón */}
+      <Modal
+        isOpen={IsOpenRaton}
+        onRequestClose={() => setIsOpenRaton(false)}
+        contentLabel="Detalles del Ratón"
+      >
+        <div className="pages">
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "20% 80%",
+              alignItems: "center",
+              justifyItems: "center",
+              width: "100%",
+              height: "100%",
+              gap: "20px",
+            }}
+          >
+            <img
+              style={{ width: "200px", height: "200px" }}
+              src={ratonGaming}  // Asegúrate de tener la imagen correspondiente
+              className="razerRaton"
+              alt="Razer Basilisk V3 Pro 35K"
+            />
+            <h1>Razer Basilisk V3 Pro 35K</h1>
+          </div>
+
+          <p>
+            El <strong>Razer Basilisk V3 Pro</strong> es un ratón gaming de alto rendimiento diseñado para jugadores que buscan precisión y personalización. Con un sensor óptico de 35,000 DPI, permite un control excepcional en juegos de alta velocidad. Además, cuenta con iluminación RGB personalizable Razer Chroma y una serie de botones programables que se adaptan a las necesidades del jugador.
+          </p>
+
+          <span><strong>Sensor:</strong> Razer Focus+ Optical Sensor (35K DPI)</span>
+          <span><strong>Iluminación:</strong> Razer Chroma RGB</span>
+          <span><strong>Botones:</strong> 11 botones programables</span>
+          <span><strong>Conectividad:</strong> Inalámbrico (Razer HyperSpeed Wireless) y cableado</span>
+          <span><strong>Ergonomía:</strong> Diseño ergonómico con agarre lateral</span>
+          <span><strong>Pesos ajustables:</strong> Sí, con 3 pesas intercambiables</span>
+          <span><strong>Tiempo de respuesta:</strong> 0.2 ms</span>
+
+          <p
+            style={{
+              fontSize: "1.5em",
+              color: "#ff4d4d",
+              fontWeight: "bold",
+              marginTop: "10px",
+            }}
+          >
+            <strong>Precio: 130€</strong>
+          </p>
+
+          <a
+            style={{ color: "#007bff" }}
+            href="https://www.pccomponentes.com/search/?query=Razer%20Basilisk%20V3%20Pro%2035K&&page=1&or-relevance"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver más detalles del Razer Basilisk V3 Pro
+          </a>
+
+          <button onClick={() => setIsOpenRaton(false)}>Cerrar</button>
+        </div>
+      </Modal>
+
+
     </div>
     
     <div class="price-container">
-      <h1>Precio total del montaje incluidos periféricos: 7762,5€</h1>
+      <h1>Precio total del montaje: {Total.toFixed(2)} €</h1>
       
     </div>
     <button class="invoiceButton" onClick={handleDownload}>Descargar Factura en Excel</button>

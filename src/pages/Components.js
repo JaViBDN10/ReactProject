@@ -83,7 +83,7 @@ const Components = () => {
         <img src={teclado} className="teclado" alt="Razer BlackWidow V4 Pro Teclado Gaming RGB" />
         <p>El Razer BlackWidow V4 Pro es un teclado mecánico gaming de alta gama que ofrece características excepcionales para una experiencia de juego inmersiva y cómoda.</p>
 
-        <h2>11.- Razer Basilisk V3 Pro 35K</h2>
+        <h2>11.- Raton: Razer Basilisk V3 Pro 35K</h2>
         <p>Una pieza imprescindible para todo gamer, el ratón tiene que ser una prolongación de nuestra mano, necesitamos que no haya latencia una precisión extrema.</p>
         <img src={ratonGaming} className="ratonGaming" alt="Razer Basilisk V3 Pro 35K" />
         <p>El <strong>Razer Basilisk V3 Pro 35K</strong> es un ratón gaming RGB ergonómico inalámbrico avanzado y personalizable. Con sensor y rueda de desplazamiento preciso y opciones de configuración detallada.</p>
