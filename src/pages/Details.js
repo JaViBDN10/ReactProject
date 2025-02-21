@@ -1,5 +1,5 @@
 import * as XLSX from "xlsx";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Modal from "react-modal";
 import rtx4080 from '../img/4080.png';
 import ryzen9700x from '../img/9700x.png';
@@ -51,25 +51,26 @@ const Details = () => {
   const precioTeclado=230;
   const precioRaton=160;
   
-  const handleTotal = () => {
-    setTotal(precioGrafica * GraphicUnits+
-      precioCPU*CPUUnits+
-      precioPlaca*PlacaUnits+
-      precioMemoria*MemoriaUnits+
-      precioRefrigeracion*RefrigeracionUnits+
-      precioTorre*TorreUnits+
-      precioFuente*FuenteUnits+
-      precioAlmacenamiento*AlmacenamientoUnits+
-      precioMonitor*MonitorUnits+
-      precioTeclado*TecladoUnits+
-      precioRaton*RatonUnits
+  const handleTotal = useCallback(() => {
+    setTotal(precioGrafica * GraphicUnits +
+      precioCPU * CPUUnits +
+      precioPlaca * PlacaUnits +
+      precioMemoria * MemoriaUnits +
+      precioRefrigeracion * RefrigeracionUnits +
+      precioTorre * TorreUnits +
+      precioFuente * FuenteUnits +
+      precioAlmacenamiento * AlmacenamientoUnits +
+      precioMonitor * MonitorUnits +
+      precioTeclado * TecladoUnits +
+      precioRaton * RatonUnits
     );
-  };
+  }, [GraphicUnits, CPUUnits, PlacaUnits, MemoriaUnits, RefrigeracionUnits, 
+    TorreUnits, FuenteUnits, AlmacenamientoUnits, MonitorUnits, TecladoUnits, 
+    RatonUnits]);
+  
   useEffect(() => {
     handleTotal();
-        console.log(Total);
-  }, [GraphicUnits,CPUUnits,PlacaUnits,MemoriaUnits,RefrigeracionUnits,TorreUnits,FuenteUnits,AlmacenamientoUnits,MonitorUnits,TecladoUnits,RatonUnits]); 
-
+  }, [handleTotal]);
 
   const handleGraphicUnits = (a) => {
     setGraphicUnits((prev) => (a === "+" ? prev + 1 : Math.max(1, prev - 1)));
