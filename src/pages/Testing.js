@@ -1,4 +1,8 @@
 import React from 'react';
+import luces from '../img/luces.JPG';
+import benchmark from '../img/benchmark.JPG';
+import msi from '../img/msi.jpg';
+import gaming from '../img/gaming.JPG';
 
 const Testing = () => {
   return (
@@ -8,6 +12,8 @@ const Testing = () => {
       <h2>1.- Comprobación de Encendido</h2>
       <p>Antes de cerrar el gabinete, realizamos una prueba rápida conectando la fuente de alimentación y encendiendo el PC.
       Verificamos que los ventiladores giren, la iluminación funcione y no haya errores visibles.</p>
+      <p>Como vemos en la imagen, las temperaturas son correctas, y lo que es más importante el RGB funciona bien.</p>
+      <img src={luces} className='cableado' alt='Funcionando' />
 
       <h2>2.- Acceso a la BIOS</h2>
       <p>Entramos en la BIOS presionando <strong>DEL</strong> o <strong>F2</strong> al arrancar. Revisamos:
@@ -41,12 +47,16 @@ const Testing = () => {
           <li>⚡ <strong>MemTest86</strong> para comprobar la estabilidad de la RAM.</li>
         </ul>
       </p>
+      <img src={benchmark} className='cableado' alt='Benchmark' />
       
       <h2>6.- Prueba en Juegos</h2>
       <p>Ejecutamos juegos exigentes como <strong>Cyberpunk 2077</strong> o <strong>Red Dead Redemption 2</strong> para verificar el rendimiento real de la GPU y CPU.</p>
+      <p>Ya estamos preparados para viciar en nuestro PC Gaming super molón.</p>
+      <img src={gaming} className='cableado' alt='Setup completo' />
 
       <h2>7.- Monitoreo y Ajustes Finales</h2>
       <p>Si las temperaturas o el rendimiento no son óptimos, ajustamos la curva de ventiladores en la BIOS o con software como <strong>MSI Afterburner</strong>.</p>
+      <img src={msi} className='cableado' alt='MSI Afterburner' />
 
       <div style={{ margin: '20px', fontSize: '22px' }}>
         <a className='App-link' href='/Pcgaming' rel='noopener noreferrer'>Volver al Montaje del PC</a>

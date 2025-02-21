@@ -1,7 +1,10 @@
 import React from 'react';
-import ensamblaje from '../img/ensamblaje.webp';
-import refrigeracion from '../img/refrigeracion.webp';
-import cableado from '../img/cableado.webp';
+import cableado from '../img/cableado.JPG';
+import lola from '../img/lola.JPG';
+import lola2 from '../img/lola2.JPG';
+import ryzen7 from '../img/ryzen7.JPG';
+import liquid from '../img/liquid.JPG';
+import graficaInstall from '../img/graficaInstall.JPG';
 
 const Assembly = () => {
   return (
@@ -10,8 +13,9 @@ const Assembly = () => {
       
       <h2>1.- Preparación de los Componentes</h2>
       <p>Después de haber pasado por caja y habernos dejado los ahorros de toda nuestra vida, somo estudiantes no tenemos ahorros...
-        esperamos impacientemenete a que nos lleguen todos los componentes.<br></br>
-        Una vez hemos recibido todo, nos aseguramos que tenemos todas las herramientas nececsarias para el montaje.<br></br>
+        esperamos impacientemenete a que nos lleguen todos los componentes.</p>
+        <img src={lola} className='ensamblaje' alt='Lola checkeando que todo esté bien :)' />
+        <p>Una vez hemos recibido todo, <strong>Lola </strong>se asegura que tenemos todos los componentes y herramientas nececsarias para el montaje.<br></br>
         <strong>Herramientas básicas:</strong>
           <ul style={{ marginLeft:"100px" }}>
             <li>🔧 <strong>Destornillador Phillips (#2)</strong> – Para atornillar la mayoría de los componentes.</li>
@@ -23,17 +27,20 @@ const Assembly = () => {
             <li>🔍 <strong>Pulsera o tapete antiestático</strong> (opcional pero recomendado) – Para evitar daños por electricidad estática.</li>
           </ul>
         </p>
-      <img src={ensamblaje} className='ensamblaje' alt='Preparación del montaje' />
+        <p>Lola: está todo correcto!!!, ya podemos empezar.</p>
+      <img src={lola2} className='ensamblaje' alt='Lola pensando como montarlo todo...' />
       
       <h2>2.- Instalación del Procesador y la Memoria RAM</h2>
       <p>Primero de todo limpiaremos bien la mesa y colocaremos un mantel antiestático para evitar posibles cargas electroestáticas.
       Cogeremos la placa base y miraremos que estén los anclajes de AMD para instalar la CPU. Una vez hecha esa comprovación colocaremos
       el <strong>Ryzen 7 9800X3D</strong> en el socket AM5 de la placa base y aseguramos los módulos <strong>DDR5</strong> en sus respectivos Slots.
       </p>
+      <img src={ryzen7} className='ensamblaje' alt='Lola pensando como montarlo todo...' />
       
       <h2>3.- Instalación del Almacenamiento</h2>
       <p>Ya que nuestro almacenamiento es un M.2 y va conectado a la placa base, aprovecharemos también antes de instalart la placa en la torre
-      a conectar nuestro <strong> Samsung 990 PRO 4TB</strong> en su ranura M.2 y lo aseguramos con su tornillo correspondiente.</p>
+      a conectar nuestro <strong> Samsung 990 PRO 4TB</strong> en su ranura M.2 y lo aseguramos con su tornillo correspondiente. En la imagen de arriba vemos que ya lo
+      tenemos instalado.</p>
       
       <h2>4.- Montaje de la Placa Base en la Torre</h2>
       <p>Una vez tenemos los componentes anteriores ya instalados en la placa es hora de fijar nuestra <strong> ASUS ROG STRIX X870E-E</strong> en la 
@@ -44,11 +51,12 @@ const Assembly = () => {
       la pasta, yo personalmente la distrubuyo en 5 puntos. Colocamos el bloque de refrigeración en la CPU, anclamos los tornillos y montamos el radiador 
       de 360mm en la parte superior de la caja. En este punto podemos aprovechar para instalar los demás ventiladores en el cabinete y hacer las conexiones a la placa
       de la líquida.</p>
-      <img src={refrigeracion} className='refrigeracion' alt='Instalación de refrigeración líquida' />
+      <img src={liquid} className='refrigeracion' alt='Instalación de refrigeración líquida' />
       
       <h2>6.- Instalación de la Tarjeta Gráfica</h2>
       <p>Tenemos todo practicamente conectado, ahora nos falta lo más importante,Insertamos la <strong>RTX 4080 Super</strong> en la ranura PCIe, tiene que hacer el "click",
        y aseguramos con tornillos para evitar movimientos.</p>
+       <img src={graficaInstall} className='cableado' alt='Instalación de la gráfica' />
       
       <h2>7.- Conexión de la Fuente de Alimentación</h2>
       <p>Montamos la <strong>Thermaltake TOUGHPOWER PF3 1200W</strong> y conectamos los cables de alimentación a cada componente. El conector de 24 pines de la placa, 
@@ -58,6 +66,7 @@ const Assembly = () => {
       <p>Nos encargamos de organizar y ocultar los cables de manera eficiente, asegurando un flujo de aire óptimo dentro del gabinete. 
         Esto no solo mejora la estética interna del equipo, sino que también contribuye a una mejor disipación del calor, 
         reduciendo la acumulación de polvo y evitando posibles interferencias con otros componentes.</p>
+        <p>Como se ve en la imagen es como no debe hacerse, jajaja, así suelo dejar yo mis PCs, luego aprieto bien ya está...</p>
       <img src={cableado} className='cableado' alt='Gestión del cableado' />
       
     
